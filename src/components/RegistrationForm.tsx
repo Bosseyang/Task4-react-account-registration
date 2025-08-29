@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { InputField } from "./InputField";
+import { SubmitButton } from "./SubmitButton";
+import { PasswordValidation } from "./PasswordValidation";
 
 export const RegistrationForm: React.FC = () => {
   const [name, setName] = useState("");
@@ -8,18 +10,28 @@ export const RegistrationForm: React.FC = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const isPasswordValid = password.length >= 0;
-  const passwordsMatch = password === confirmPassword;
-  const canSubmit = isPasswordValid && passwordsMatch;
+  const isPasswordValid: boolean = password.length >= 8;
+  const passwordsMatch: boolean = (password === confirmPassword);
+  const canSubmit: boolean = isPasswordValid && passwordsMatch;
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!canSubmit) return;
+
+    const registrationData = {
+      name,
+      username,
+      email,
+      password,
+    };
+
+    console.log("Registration Data:", registrationData);
   };
+
   return (
-    <form className="form" onSubmit={handleSubmit}>
+    <form className="registration-form" onSubmit={handleSubmit}>
       <h2 className="form-h2">Create an Account</h2>
-      <InputField label="Name" type="text" value={name} onChange={setName} />
       <div className="input-wrapper">
         <div className="user-wrapper">
           <InputField label="Name" type="text" value={name} onChange={setName} />
@@ -35,8 +47,10 @@ export const RegistrationForm: React.FC = () => {
             onChange={setConfirmPassword}
           />
 
-      <button type="submit">Submit</button>
           <PasswordValidation isPasswordValid={isPasswordValid} passwordsMatch={passwordsMatch} />
+        </div>
+      </div>
+      <SubmitButton disabled={!canSubmit} />
     </form>
   );
 };

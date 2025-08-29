@@ -28,7 +28,7 @@ export const RegistrationForm: React.FC = () => {
 
     console.log("Registration Data:", registrationData);
 
-    alert(`Submitted! Your account with username: ${username} is now registered!`);
+    alert(`Successfully submitted! \nYour account with username: ${username} is now registered!`);
     setName("");
     setUsername("");
     setEmail("");

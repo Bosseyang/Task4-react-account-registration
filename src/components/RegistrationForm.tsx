@@ -22,6 +22,7 @@ export const RegistrationForm: React.FC = () => {
       <InputField label="Name" type="text" value={name} onChange={setName} />
 
       <button type="submit">Submit</button>
+          <PasswordValidation isPasswordValid={isPasswordValid} passwordsMatch={passwordsMatch} />
     </form>
   );
 };

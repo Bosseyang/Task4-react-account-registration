@@ -1,0 +1,6 @@
+.inputfield {
+  padding: 0.5rem;
+}
+.inputfield:focus {
+  outline: auto;
+}

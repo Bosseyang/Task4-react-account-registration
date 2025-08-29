@@ -7,13 +7,16 @@ interface IInputFieldProps {
 export const InputField: React.FC<IInputFieldProps> = ({ value, label, type, onChange }) => {
   return (
     <div className="inputfield-wrapper">
-      <label className="input-label">{label}</label>
-      <input
-        className="inputfield"
-        type={type}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-      />
+      <label className="input-label ">
+        {label}
+        <input
+          className="inputfield"
+          type={type}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          required
+        />
+      </label>
     </div>
   );
 };

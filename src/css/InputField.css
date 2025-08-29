@@ -1,6 +1,14 @@
 .inputfield {
+  display: flex;
+  justify-content: flex-end;
+
+  width: 200px;
   padding: 0.2rem;
 }
 .inputfield:focus {
   outline: auto;
+}
+
+.input-label {
+  align-items: center;
 }

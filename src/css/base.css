@@ -2,3 +2,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+g-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

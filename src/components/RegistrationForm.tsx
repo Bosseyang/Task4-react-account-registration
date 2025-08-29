@@ -11,7 +11,7 @@ export const RegistrationForm: React.FC = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const isPasswordValid: boolean = password.length >= 8;
-  const passwordsMatch: boolean = (password === confirmPassword);
+  const passwordsMatch: boolean = password === confirmPassword;
   const canSubmit: boolean = isPasswordValid && passwordsMatch;
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -27,6 +27,13 @@ export const RegistrationForm: React.FC = () => {
     };
 
     console.log("Registration Data:", registrationData);
+
+    alert(`Submitted! Your account with username: ${username} is now registered!`);
+    setName("");
+    setUsername("");
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
   };
 
   return (

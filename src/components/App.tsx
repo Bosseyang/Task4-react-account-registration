@@ -4,12 +4,12 @@ import { RegistrationForm } from "./RegistrationForm";
 
 function App() {
   return (
-    <body>
+    <>
       <Header />
       <main>
         <RegistrationForm />
       </main>
-    </body>
+    </>
   );
 }
 
